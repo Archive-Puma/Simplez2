@@ -1,0 +1,34 @@
+{
+  "name": "simplez2",
+  "version": "0.1.0",
+  "description": "A new Simplez compiler and debugger",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CosasDePuma/Simplez2.git"
+  },
+  "keywords": [
+    "simplez",
+    "algoritmez",
+    "ao",
+    "asm",
+    "nasm",
+    "fasm",
+    "yasm",
+    "gas",
+    "assembly"
+  ],
+  "author": "CosasDePuma <kikefontanlorenzo@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/CosasDePuma/Simplez2/issues"
+  },
+  "homepage": "https://github.com/CosasDePuma/Simplez2#readme",
+  "dependencies": {
+    "electron": "^1.6.11",
+    "standard": "^10.0.2"
+  }
+}
