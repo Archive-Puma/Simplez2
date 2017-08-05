@@ -16,7 +16,21 @@ document.getElementById('min-btn').addEventListener('click', () => {
 
 document.getElementById('editor-btn').addEventListener('click', () => {
   var window = remote.getCurrentWindow()
-  main.view = 'view/editor.html'
+  remote.getGlobal('sharedObj').view = 'view/editor.html'
+  main.createWindow()
+  window.close()
+}, false)
+
+document.getElementById('asm-btn').addEventListener('click', () => {
+  var window = remote.getCurrentWindow()
+  remote.getGlobal('sharedObj').view = 'view/asm.html'
+  main.createWindow()
+  window.close()
+}, false)
+
+document.getElementById('menu-btn').addEventListener('click', () => {
+  var window = remote.getCurrentWindow()
+  remote.getGlobal('sharedObj').view = 'view/menu.html'
   main.createWindow()
   window.close()
 }, false)
