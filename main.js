@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, globalShortcut} = require('electron')
 const path = require('path')
 const url = require('url')
 
@@ -6,7 +6,8 @@ const url = require('url')
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
-let view = 'view/editor.html'
+// Global Variables
+global.sharedObj = { view: 'view/editor.html' }
 
 function chooseWindow () {
   // Create the browser window.
@@ -47,7 +48,7 @@ exports.createWindow = () => {
 
   // and load the index.html of the app.
   win.loadURL(url.format({
-    pathname: path.join(__dirname, view),
+    pathname: path.join(__dirname, global.sharedObj.view),
     protocol: 'file:',
     slashes: true
   }))
@@ -67,7 +68,18 @@ exports.createWindow = () => {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', chooseWindow)
+app.on('ready', () => {
+  globalShortcut.register('F1', () => {
+    global.sharedObj.view = 'view/editor.html'
+  })
+  globalShortcut.register('F2', () => {
+    global.sharedObj.view = 'view/asm.html'
+  })
+  globalShortcut.register('F3', () => {
+    global.sharedObj.view = 'view/menu.html'
+  })
+  chooseWindow()
+})
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
