@@ -90,6 +90,14 @@ body { -webkit-app-region: no-drag; /* make window no-draggable */ }
     background-image: linear-gradient(to bottom,var(--main-bg-color) 0, var(--main-bg-color) 100%);
 }
 
+footer span {
+    font-family: Courier New, Courier, monospace;
+    margin-left: 0.8em;
+    font-size: 80%;
+}
+
+footer span.active { color: #eee; }
+
 /** PAGE CONTENT >>
 ======================= */
 .padded-more { width: 100%; }
