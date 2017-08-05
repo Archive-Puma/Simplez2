@@ -137,3 +137,13 @@ footer span.active { color: #eee; }
     background: var(--final-bg);
     text-decoration: none;
 }
+
+/** EDITOR >>
+======================== */
+
+.full-height { height:100%; align-content: middle; }
+.editor {
+    width:90%;
+    height: 90%;
+    background: pink
+}
