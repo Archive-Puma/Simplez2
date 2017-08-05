@@ -1,0 +1,131 @@
+/** VARIABLES >>
+======================= */
+:root {
+
+    --main-bg-color: #282c34;
+    --main-dark-bg-color: #21252b;
+    --main-tx-color: #abb2bf;
+    --blue-color: #61afef;
+    --cyan-color: #56b6c2;
+    --green-color: #98c379;
+    --black-color: #3b4251;
+    --gray-color: #abb2bf;
+
+    --init-bg: var(--main-dark-bg-color);
+    --final-bg: var(--main-bg-color);
+    --form-color: var(--gray-color);
+    --form-border: var(--main-bg-color);
+    --form-border-size: 0.05em;
+    --form-border-size-: -0.05em;
+}
+
+
+/** APPARATUS STYLE >>
+======================= */
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+*:focus { outline:none; }
+body { -webkit-app-region: no-drag; /* make window no-draggable */ }
+
+.window {
+  background-color: var(--black-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Ubuntu", "Helvetica Neue", sans-serif;
+  color: var(--main-tx-color);
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  animation: fadein 0.3s;
+  user-select: none;
+  -webkit-animation: fadein 0.3s; /* Smoother startup */
+  -webkit-user-select: none;  /*disable text selection*/
+  overflow: hidden;
+}
+
+/** TOOLBARS >>
+======================= */
+.toolbar {
+    min-height:22px;
+    box-shadow:inset 0 1px 0 var(--final-bg);
+    background-color: var(--init-bg);
+    background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,var(--init-bg)),color-stop(100%,var(--final-bg)));
+    background-image:-webkit-linear-gradient(top,var(--init-bg) 0,var(--final-bg) 100%);
+    background-image:linear-gradient(to bottom,var(--init-bg) 0,var(--final-bg) 100%);
+}
+
+.toolbar-header { -webkit-app-region: drag; }
+.toolbar-footer { -webkit-app-region: no-drag; }
+.toolbar-header div.pull-right { --webkit-app-region: no-drag; }
+
+.title {
+    text-align: left;
+    padding-left: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    color: var(--main-tx-color);
+}
+
+.toolbar-header .btn {
+    margin-right: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    height: 1em;
+}
+
+.toolbar-footer .icon {
+    color: #cccccc;
+}
+
+.btn-primary {
+    color: #ddd;
+    border-color: var(--main-dark-bg-color);
+    background-image: linear-gradient(to bottom,var(--gray-color) 0, var(--main-bg-color) 100%);
+}
+.btn-primary:active {
+    background-color: var(--main-dark-bg-color);
+    background-image: linear-gradient(to bottom,var(--main-bg-color) 0, var(--main-bg-color) 100%);
+}
+
+/** PAGE CONTENT >>
+======================= */
+.padded-more { width: 100%; }
+.pane { border: 0; }
+
+.centered {
+    display:flex;
+    position: relative;
+    justify-content: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/** CSS3BUTTONGENERATOR.COM >>
+======================== */
+.btn-main {
+    width: 11em; height: 3em;
+    text-align: center;
+    background: var(--init-bg);
+    background-image: -webkit-linear-gradient(top, var(--init-bg), var(--final-bg));
+    background-image: -moz-linear-gradient(top, var(--init-bg), var(--final-bg));
+    background-image: -ms-linear-gradient(top, var(--init-bg), var(--final-bg));
+    background-image: -o-linear-gradient(top, var(--init-bg), var(--final-bg));
+    background-image: linear-gradient(to bottom, var(--init-bg), var(--final-bg));
+    -webkit-box-shadow: 0px 1px 3px #666666;
+    -moz-box-shadow: 0px 1px 3px #666666;
+    box-shadow: 0px 1px 3px #666666;
+    font-family: Courier New;
+    color: var(--main-tx-color);
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    border: solid var(--form-border) 2px;
+    text-decoration: none;
+}
+
+.btn-main:hover {
+    background: var(--final-bg);
+    text-decoration: none;
+}
