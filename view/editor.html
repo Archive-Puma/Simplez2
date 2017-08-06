@@ -6,6 +6,8 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/photon.min.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="../registry.js"></script>
 </head>
 
   <body>
@@ -32,9 +34,21 @@
                         </div>
                     </div>
                     <div class="pane">
-                        <div class="centered">
-                            <h1>REGISTERS</h1>
-                        </div>
+                        <table class="table-striped">
+                            <thead>
+                                <th>POS</th>
+                                <th>Hex</th>
+                                <th>Octal</th>
+                                <th>Decimal</th>
+                                <th>ASCII</th>
+                                <th>COMMAND</th>
+                            </thead>
+                            <tbody>
+                                <script>
+                                    memory()
+                                </script>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -51,6 +65,6 @@
 
         <!-- Electron Javascript -->
         <script src="../window.js"></script>
-
+        
     </body>
 </html>

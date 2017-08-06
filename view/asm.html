@@ -6,6 +6,8 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/photon.min.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="../registry.js"></script>
 </head>
 
   <body>
@@ -25,8 +27,29 @@
         <!-- Your app's content goes inside .window-content -->
         <div class="window-content">
             <div class="padded-more">
-                <div class="centered">
-                    <h1>ENSAMBLADOR</h1>
+                <div class="pane-group">
+                    <div class="pane">
+                        <div class="centered">
+                            <h1>ENSAMBLADOR</h1>
+                        </div>
+                    </div>
+                    <div class="pane">
+                        <table class="table-striped">
+                            <thead>
+                                <th>POS</th>
+                                <th>Hex</th>
+                                <th>Octal</th>
+                                <th>Decimal</th>
+                                <th>ASCII</th>
+                                <th>COMMAND</th>
+                            </thead>
+                            <tbody>
+                                <script>
+                                    memory()
+                                </script>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div> <!-- /window-content -->

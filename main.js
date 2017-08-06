@@ -7,7 +7,10 @@ const url = require('url')
 let win
 
 // Global Variables
-global.sharedObj = { view: 'view/editor.html' }
+global.sharedObj = { view: 'view/editor.html', register: new Array(1000) }
+
+global.sharedObj.register[0] = 0
+console.log(global.sharedObj.register[0])
 
 function chooseWindow () {
   // Create the browser window.
@@ -40,7 +43,7 @@ function chooseWindow () {
 exports.createWindow = () => {
   // Create the browser window.
   win = new BrowserWindow({
-    width: 800,
+    width: 840,
     height: 600,
     frame: false,
     resizable: true

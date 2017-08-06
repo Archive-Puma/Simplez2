@@ -125,7 +125,7 @@ footer span.active { color: #eee; }
     -webkit-box-shadow: 0px 1px 3px #666666;
     -moz-box-shadow: 0px 1px 3px #666666;
     box-shadow: 0px 1px 3px #666666;
-    font-family: Courier New;
+    font-family: Courier New, Courier, monospace;
     color: var(--main-tx-color);
     font-size: 20px;
     padding: 10px 20px 10px 20px;
@@ -141,9 +141,13 @@ footer span.active { color: #eee; }
 /** EDITOR >>
 ======================== */
 
-.full-height { height:100%; align-content: middle; }
-.editor {
-    width:90%;
-    height: 90%;
-    background: pink
+.table-stripped { border-left: 1px; border-right: 1px; }
+th {
+    color: var(--main-tx-color);
+    background: var(--main-dark-bg-color);
+}
+td {
+    font-family: Courier New, Courier, monospace;
+    color: var(--main-tx-color);
+    background: var(--main-bg-color);
 }
