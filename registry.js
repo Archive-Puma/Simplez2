@@ -30,9 +30,12 @@ function GetCommand (octal) {
       code = 'BZ'
       break
     case '5':
-      code = 'DEC'
+      code = 'CLR'
       break
     case '6':
+      code = 'DEC'
+      break
+    case '7':
       code = 'HALT'
       break
     default:
@@ -47,14 +50,18 @@ function memory () {
     var octal = octalN.toString()
     var dec = FormatNumberLength(parseInt(octalN, 8))
     var hex = parseInt(octalN, 8).toString(16).toUpperCase()
+    var command = GetCommand(octal)
     document.write(`<tr>
                       <td>` + FormatNumberLength(i.toString(8)) + `o</td>
                       <td>` + hex + `</td>
                       <td>` + octal + `</td>
                       <td>` + FormatNumberLength(dec) + `</td>
                       <td>` + String.fromCharCode(dec) + `</td>
-                      <td>` + GetCommand(octal) + ` /` + octal.substr(1) + `o</td>
-                    </tr>`)
+                      <td>` + command)
+    if (command !== 'CLR' && command !== 'DEC' && command !== 'HALT') {
+      document.write(' /' + octal.substr(1) + 'o')
+    }
+    document.write('</td></tr>')
   }
 }
 

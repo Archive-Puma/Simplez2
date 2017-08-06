@@ -11,7 +11,7 @@ global.sharedObj = { view: 'view/editor.html', msg: 'None', register: [] }
 
 // Clear the memory
 for (var i = 0; i < 512; i++) {
-  global.sharedObj.register[i] = 1012
+  global.sharedObj.register[i] = 0
 }
 
 function chooseWindow () {
