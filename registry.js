@@ -43,16 +43,17 @@ function GetCommand (octal) {
 
 function memory () {
   for (var i = 0; i < 512; i++) {
-    var dec = remote.getGlobal('sharedObj').register[i]
-    var octal = FormatNumberLength(dec.toString(8))
-    var hex = FormatNumberLength(dec.toString(16))
+    var octalN = remote.getGlobal('sharedObj').register[i]
+    var octal = octalN.toString()
+    var dec = FormatNumberLength(parseInt(octalN, 8))
+    var hex = parseInt(octalN, 8).toString(16).toUpperCase()
     document.write(`<tr>
                       <td>` + FormatNumberLength(i.toString(8)) + `o</td>
                       <td>` + hex + `</td>
                       <td>` + octal + `</td>
                       <td>` + FormatNumberLength(dec) + `</td>
                       <td>` + String.fromCharCode(dec) + `</td>
-                      <td>` + GetCommand(octal) + ` /000o</td>
+                      <td>` + GetCommand(octal) + ` /` + octal.substr(1) + `o</td>
                     </tr>`)
   }
 }
