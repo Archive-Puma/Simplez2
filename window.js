@@ -1,5 +1,7 @@
 // Electron Remote Constants
-const {remote} = require('electron')
+try {
+  const {remote} = require('electron')
+} catch (exception) { }
 
 /** WINDOW BUTTONS >>
 ======================= */

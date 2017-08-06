@@ -7,7 +7,12 @@ const url = require('url')
 let win
 
 // Global Variables
-global.sharedObj = { view: 'view/editor.html', msg: 'None', register: new Array(1000) }
+global.sharedObj = { view: 'view/editor.html', msg: 'None', register: [] }
+
+// Clear the memory
+for (var i = 0; i < 512; i++) {
+  global.sharedObj.register[i] = 1012
+}
 
 function chooseWindow () {
   // Create the browser window.
