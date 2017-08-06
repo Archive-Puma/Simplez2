@@ -5,7 +5,7 @@ console.log(remote.getGlobal('sharedObj').register)
 function FormatNumberLength (num) {
   num = parseInt(num)
   var r = '' + num
-  while (r.length < 3) {
+  while (r.length < 4) {
     r = '0' + r
   }
   return r
@@ -47,12 +47,12 @@ function GetCommand (octal) {
 function memory () {
   for (var i = 0; i < 512; i++) {
     var octalN = remote.getGlobal('sharedObj').register[i]
-    var octal = octalN.toString()
+    var octal = FormatNumberLength(octalN.toString())
     var dec = FormatNumberLength(parseInt(octalN, 8))
     var hex = parseInt(octalN, 8).toString(16).toUpperCase()
     var command = GetCommand(octal)
     document.write(`<tr>
-                      <td>` + FormatNumberLength(i.toString(8)) + `o</td>
+                      <td>` + FormatNumberLength(i.toString(8)).substr(1) + `o</td>
                       <td>` + hex + `</td>
                       <td>` + octal + `</td>
                       <td>` + FormatNumberLength(dec) + `</td>
