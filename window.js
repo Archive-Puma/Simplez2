@@ -11,6 +11,7 @@ document.getElementById('close-btn').addEventListener('click', () => {
 document.getElementById('min-btn').addEventListener('click', () => {
   var window = remote.getCurrentWindow()
   window.minimize()
+  // remote.getCurrentWindow().loadURL('view/asm.html')
 }, false)
 
 document.getElementById('zoom-btn').addEventListener('click', () => {

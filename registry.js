@@ -21,7 +21,7 @@ function memory () {
   }
 }
 
-function register () {
+function registerz () {
   document.write(`
                 <table>
                   <tbody>
